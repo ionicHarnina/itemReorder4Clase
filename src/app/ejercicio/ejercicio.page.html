@@ -3,8 +3,19 @@
     <ion-title>ejercicio</ion-title>
   </ion-toolbar>
 </ion-header>
-<!-- crea un grupo reorganizable de n elementos de un array creado en 
-codigo TS -->
+
 <ion-content>
-  
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+        <ion-item *ngFor="let item of items" >
+            <ion-label>
+              {{item}}
+            </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+    </ion-reorder-group>
+    <ion-list>
+      <ion-item *ngFor="let item of items" >
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    </ion-list>
 </ion-content>
